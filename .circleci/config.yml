@@ -20,6 +20,6 @@ jobs:
             - ./node_modules
       - run:
           name: Generate Report
-          command: npx newman run AH_assignment_reporting.postman_collection.json -r htmlextra
+          command: npm run report
       - store_artifacts:
           path: ~/repo/newman
