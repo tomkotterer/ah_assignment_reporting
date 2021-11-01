@@ -1,5 +1,13 @@
 {
   "dependencies": {
     "newman-reporter-htmlextra": "^1.22.3"
-  }
+    
+  },
+  "script" : {
+    "report": "npx newman run AH_assignment_reporting.postman_collection.json -r htmlextra "
 }
+}
+
+  
+  
+
