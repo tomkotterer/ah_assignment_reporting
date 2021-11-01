@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "066f7b45-0e5d-4ade-a24e-24112ec2a562",
+		"name": "AH assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/clients",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"const person = response.find(item => item.name === \"Elvera\");  \r",
+							"\r",
+							"pm.test(\"Validate if the response contains the correct content regarding client Elvera\", () => {\r",
+							" pm.expect(person.name).to.eql(\"Elvera\");\r",
+							"  pm.expect(person.lastname).to.eql(\"Sipes\");\r",
+							"   pm.expect(person.id).to.eql(\"1\");\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validate the stamps of Elvera\", () => {\r",
+							"    pm.expect(person.stamps[0].amount).to.eql(34398);\r",
+							"    pm.expect(person.stamps[0].promotion).to.eql(\"Efteling\");\r",
+							"    pm.expect(person.stamps[0].id).to.eql(\"1\");\r",
+							"    pm.expect(person.stamps[0].clientId).to.eql(\"1\");\r",
+							" });\r",
+							"\r",
+							" pm.test(\"Validate the cards of Elvera\", () => {\r",
+							"    pm.expect(person.cards[0].amount_full_cards).to.eql(1);\r",
+							"    pm.expect(person.cards[0].id).to.eql(\"1\");\r",
+							"    pm.expect(person.cards[0].stampId).to.eql(\"1\");\r",
+							" });"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://6171294cc20f3a001705fb10.mockapi.io/clients",
+					"protocol": "https",
+					"host": [
+						"6171294cc20f3a001705fb10",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/stamps",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://6171294cc20f3a001705fb10.mockapi.io/stamps",
+					"protocol": "https",
+					"host": [
+						"6171294cc20f3a001705fb10",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"stamps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/cards",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://6171294cc20f3a001705fb10.mockapi.io/cards",
+					"protocol": "https",
+					"host": [
+						"6171294cc20f3a001705fb10",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"cards"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
