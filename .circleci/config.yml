@@ -19,7 +19,12 @@ jobs:
           paths:
             - ./node_modules
       - run:
+        name: Save the test results
+        command:
+          mkdir -p ~/test-results/newman
+          cp ./newman/newman-run-report-
+      - run:
           name: Generate Report
-          command: npx newman run AH_assignment_reporting.postman_collection.json -r htmlextra
+          command: npm run report
       - store_artifacts:
           path: ~/repo/newman
