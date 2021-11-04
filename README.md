@@ -51,6 +51,9 @@ jobs:
           command: npx newman run AH_assignment_reporting.postman_collection.json -r htmlextra
       - store_artifacts:
           path: ~/repo/newman
+In the configuration above, the node.js Docker image is pulled in as the environment for running the tests. Then, npm is updated, and dependencies are installed and cached. 
+With all dependencies in place, the custom report script is run using npm. This command runs the tests and generates the report. 
+Finally, the reports folder (newman) is stored as an artifact. It can be found on the build’s Artifacts tab on the CircleCI console.
 2. Run the build
 3. Build should be successful
 4. Reporting can be found in the Artifacts tab
