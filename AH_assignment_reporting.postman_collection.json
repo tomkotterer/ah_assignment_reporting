@@ -164,11 +164,7 @@
 							"    pm.expect(person2.cards[0].amount_full_cards).to.eql(29);\r",
 							"    pm.expect(person2.cards[0].id).to.eql(\"8\");\r",
 							"    pm.expect(person2.cards[0].stampId).to.eql(\"8\");\r",
-							" });\r",
-							"\r",
-							"pm.test(\"Validate the schema of the response\" , () => {\r",
-							"    pm.response.to.have.jsonSchema(schema)\r",
-							"})"
+							" });"
 						],
 						"type": "text/javascript"
 					}
