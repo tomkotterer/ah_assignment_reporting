@@ -1,6 +1,6 @@
 "# ah_assignment_reporting" 
 
-Steps to create the automated test in CircleCI with reporting
+Steps to create the automated test in CircleCI with reporting using the Newman orb
 
 Postman
 1. Documented the API-calls to the collection
